@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pneumatic Developer - Modelo de Negócio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      max-width: 900px;
+    }
+    h1, h2, h3, h4 {
+      color: #333;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    iframe {
+      display: block;
+      margin: 10px 0;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pneumatic Developer</h1>
+
+  <section>
+    <h2>1. Resumo Executivo</h2>
+    <p>O Pneumatic Developer é um simulador avançado de sistemas eletropneumáticos e de lógica de controle (PLC) que permite a criação, edição e simulação de circuitos de forma prática e intuitiva. Desenvolvido para plataformas Android e Windows – com planos de expansão para iOS –, o aplicativo se destaca por sua interface de arrastar e soltar, simulações precisas (incluindo cálculos de pressão e vazão) e recursos inovadores, como a geração automática de programação Ladder a partir de expressões digitadas pelo usuário.</p>
+    <p>A proposta do Pneumatic Developer é oferecer uma ferramenta robusta tanto para o ambiente educacional quanto para o treinamento profissional em automação industrial, eliminando a necessidade de equipamentos físicos onerosos e possibilitando a experimentação segura de projetos complexos.</p>
+  </section>
+
+  <section>
+    <h2>2. Visão Geral do Produto e Tecnologias Utilizadas</h2>
+    <h3>2.1 Evolução Tecnológica</h3>
+    <ul>
+      <li>
+        <strong>Versão Original:</strong>
+        <ul>
+          <li><strong>Xamarin:</strong> Plataforma de desenvolvimento que possibilitava a criação de aplicações multiplataforma utilizando uma base de código compartilhada para Android, iOS e Windows.</li>
+          <li><strong>CocosSharp:</strong> Biblioteca para renderização gráfica 2D, que permitia a criação de gráficos interativos, mas apresentava desafios em termos de estabilidade e gerenciamento de recursos, ocasionando falhas inesperadas.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Nova Versão:</strong>
+        <ul>
+          <li><strong>.NET MAUI (Multi-platform App UI):</strong> Evolução do Xamarin.Forms, permitindo a criação de interfaces nativas e consistentes em diversas plataformas (Android, Windows e futuramente iOS), com melhor desempenho, gerenciamento de memória e uma estrutura de código mais moderna.</li>
+          <li><strong>SkiaSharp:</strong> Biblioteca de gráficos 2D que substitui o CocosSharp, oferecendo renderização vetorial de alta performance e estabilidade, ideal para simular circuitos complexos com precisão.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>2.2 Recursos Principais</h3>
+    <h4>Simulação Ladder Automática</h4>
+    <p>No vídeo a seguir, é demonstrada a funcionalidade de programação Ladder automática.</p>
+    <p>Suporte a contadores, temporizadores, operações matemáticas (A+B, A-B), operações lógicas, além de entradas e saídas digitais e analógicas. O usuário escreve a expressão e o software gera automaticamente a programação Ladder correspondente.</p>
+    <p>Simulação em tempo real, permitindo testar o comportamento do circuito antes da implementação física.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XYEs8TEpSAk" title="Demonstração Simulação Ladder Automática" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <h4>Comunicação Modbus TCP</h4>
+    <p>O vídeo abaixo apresenta a comunicação via Modbus TCP com o BluePlant da Altus, permitindo a interação com sistemas SCADA e supervisórios.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3-yB3ju6qXY" title="Comunicação Modbus TCP - BluePlant" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>O vídeo abaixo demonstra a comunicação com um dispositivo real, o OPTA da Finder, tornando o aplicativo aplicável a projetos reais de automação industrial.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PmL1wSb46XA" title="Comunicação Modbus TCP - OPTA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <h4>Personalização de Atuadores</h4>
+    <p>Permite a personalização do tamanho do pistão, diâmetro e outros parâmetros. Possibilita desenvolver cilindros conforme a tabela de fabricantes, incluindo logotipo e tamanhos específicos.</p>
+  </section>
+
+  <section>
+    <h2>3. Feedback dos Usuários e Melhoria Contínua</h2>
+    <h3>Avaliação de Professores e Instrutores</h3>
+    <p><strong>Sr. Marcos de Aguiar Guimarães - Docente - Campus São Paulo – Instituto Federal</strong></p>
+    <ul>
+      <li><em>Pontos positivos:</em>
+        <ul>
+          <li>Menu lateral intuitivo (ícones bem sugestivos mesmo sem texto).</li>
+          <li>Opção de exibição de símbolos e imagens dos componentes pneumáticos, facilitando o aprendizado.</li>
+          <li>Inserção fácil de componentes, especialmente na parte elétrica.</li>
+          <li>Configuração das válvulas intuitiva (configuração de posições e acionamentos).</li>
+        </ul>
+      </li>
+      <li><em>Pontos de melhoria:</em>
+        <ul>
+          <li>Atualmente, para ampliar o espaço do projeto, é necessário reduzir o tamanho dos componentes, o que exige realocação. Sugestão: funcionalidade para aumento da folha mantendo o tamanho dos componentes.</li>
+          <li>Falta a opção de mover vários componentes simultaneamente.</li>
+          <li>Necessário incluir uma opção "Salvar Como" para evitar sobrescrever projetos existentes.</li>
+        </ul>
+      </li>
+      <li><em>Funcionalidades desejadas:</em>
+        <ul>
+          <li>Caixa de textos para identificação de componentes.</li>
+          <li>Inclusão de relés, contadores e CLP programável no app.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><strong>Sr. Elton da Silva Borges – Instrutor de Automação – SENAI Ribeirão Preto</strong></p>
+    <ul>
+      <li><em>Pontos positivos:</em>
+        <ul>
+          <li>A simulação em tempo real ajuda a validar projetos antes da implementação física.</li>
+          <li>Visualização gráfica dos componentes e comportamento do ar torna o entendimento mais intuitivo.</li>
+        </ul>
+      </li>
+      <li><em>Sugestões:</em>
+        <ul>
+          <li>Melhorar a interface para iniciantes, talvez com um assistente interativo.</li>
+          <li>Funcionalidade para salvar e compartilhar simulações com outros usuários.</li>
+          <li>Simulação de falhas nos componentes pneumáticos para análise de reações do sistema.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Comentários do Google Play</h3>
+    <ul>
+      <li>"Postei sobre um problema que tive com o aplicativo e foram super atenciosos. Parabéns aos desenvolvedores pelo trabalho maravilhoso!! Segue o comentário original: O app é ótimo, mas tenho enfrentado problemas na utilização. Ao configurar uma válvula com a opção 'pilotado' o app simplesmente fecha. O que está ocorrendo? Tentei em dois celulares, mas..." – <em>Victória Oliveira</em></li>
+      <li>"Ótimo simulador. E muito didático, em especial por ter, além da representação em forma de símbolos dos componentes, também a ilustração do componente, o que melhora muito a experiência em idealizar o projeto. Parabéns para os desenvolvedores. Mesmo que a versão de teste seja só de 7 dias, o custo-benefício para comprar a licença é muito bom." – <em>Vitor Centanini</em></li>
+      <li>"Muito simples de usar. Talvez para quem seja leigo e esteja começando agora no universo da eletropneumática tenha dificuldade, mas quem tem um pouco de noção tem uma ferramenta excelente em mãos. Parabéns ao desenvolvedor." – <em>Jeferson Sousa</em></li>
+      <li>"Excelente aplicativo. Bem intuitivo e com o diferencial de poder visualizar o desenho dos componentes. O desenvolvedor é sempre muito atencioso e os problemas são resolvidos rapidamente." – <em>Professor Giovani Pasetti</em></li>
+      <li>"Promissor, porém o app precisa de uma melhor estabilidade. O que de fato me incomodou foi a interface, recomendo melhorar, usando novas janelas com os dispositivos melhor organizados. Sucesso ao app!" – <em>Roberto Lima</em></li>
+      <li>"Se um dia se tornar como o CAD Simu, vai ser imbatível... Me refiro na questão de tornar o aplicativo tão útil e usual como o descrito acima, com mais ferramentas e simbologias elétricas para projetos de máquinas. Quanto à pneumática, está perfeito." – <em>Nilton Costa</em></li>
+      <li>"O aplicativo é muito bom, porém tem alguns problemas que podem ser facilmente consertados. Os roletes alguns não funcionam como deveriam e tem vários bugs, ele fica saindo toda hora. Tirando isso, excelente app." – <em>Paulo Vinicius</em></li>
+      <li>"Aplicativo atende muito bem, porém estou com um probleminha: necessito fazer um diagrama que utiliza um contador, mas infelizmente não tem. Fica a dica para uma próxima atualização." – <em>Edcley Almeida</em></li>
+      <li>"Darei 5 estrelas no momento em que, na atualização, incluam novos componentes que faltam. Na versão Pro Ultimate, não deveria faltar nada." – <em>Edson Oliveira</em></li>
+      <li>"Não consegui encontrar o despressurizador e nem o botão de sinal de comando para fazer testes. Achei o apk bom para desenvolver sistemas, mas falta esses comandos a acrescentar." – <em>Leandro Santos</em></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Modelo de Negócios</h2>
+    <h3>Problema</h3>
+    <p>A crescente demanda por profissionais capacitados em automação industrial, aliada à necessidade de realizar simulações práticas antes da implementação real, evidencia a lacuna existente em instituições de ensino e empresas. Adquirir e manter equipamentos físicos para treinamento representa um alto custo e limita a oferta de práticas reais, dificultando a formação de mão-de-obra especializada.</p>
+
+    <h3>Solução</h3>
+    <p>O Pneumatic Developer oferece uma plataforma prática e acessível que permite a simulação de sistemas pneumáticos e lógicas de controle sem a necessidade de equipamentos físicos caros. Com uma interface amigável e simulações precisas, o aplicativo é ideal tanto para o aprendizado em instituições de ensino quanto para o treinamento de funcionários em indústrias, garantindo um ambiente seguro para experimentação e desenvolvimento de habilidades técnicas.</p>
+
+    <h3>Proposta de Valor</h3>
+    <ul>
+      <li><strong>Interface Intuitiva:</strong> Facilita a criação e simulação de circuitos para usuários de todos os níveis.</li>
+      <li><strong>Simulações Realistas:</strong> Cálculos precisos que asseguram aderência à realidade dos sistemas simulados.</li>
+      <li><strong>Educação e Treinamento Acessível:</strong> Democratiza o acesso ao aprendizado prático, eliminando a necessidade de investimentos elevados em equipamentos.</li>
+      <li><strong>Integração com Sistemas Reais:</strong> A comunicação via Modbus TCP permite a conexão com dispositivos e sistemas industriais, ampliando as possibilidades de aplicação prática.</li>
+    </ul>
+
+    <h3>Público-Alvo</h3>
+    <ul>
+      <li>Instituições de ensino (escolas técnicas, universidades, centros de capacitação).</li>
+      <li>Indústrias que buscam treinamento econômico e prático para seus funcionários.</li>
+      <li>Hobbistas e entusiastas da automação e controle.</li>
+    </ul>
+
+    <h3>Modelo de Receita</h3>
+    <ul>
+      <li><strong>Venda Direta:</strong> Licenciamento do software para instituições educacionais e empresas, com versões customizadas conforme as necessidades do cliente.</li>
+      <li><strong>Modelo Freemium:</strong> Disponibilização de uma versão básica gratuita com recursos limitados e uma versão premium paga que inclui funcionalidades avançadas, suporte técnico e atualizações exclusivas.</li>
+      <li><strong>Marketplace de Componentes e Conteúdos:</strong> Venda de componentes virtuais, tutoriais, cursos e pacotes de simulações avançadas para expandir as capacidades do aplicativo.</li>
+    </ul>
+
+    <h3>Estratégia de Marketing</h3>
+    <ul>
+      <li>Oferecer demonstrações gratuitas e períodos de teste para atrair novos usuários.</li>
+      <li>Estabelecer parcerias estratégicas com instituições de ensino e empresas de automação.</li>
+      <li>Investir em marketing digital (redes sociais, blogs, webinars e vídeos demonstrativos).</li>
+      <li>Participar de feiras e eventos do setor industrial e educacional para reforçar a credibilidade e o potencial do aplicativo.</li>
+    </ul>
+
+    <h3>Projeções Financeiras e Necessidade de Investimento</h3>
+    <p>As projeções para os primeiros 3 a 5 anos serão baseadas em análises de mercado, número de licenças vendidas e assinaturas premium, além do potencial de parcerias estratégicas. O investimento será destinado ao desenvolvimento contínuo do aplicativo (expansão de funcionalidades e melhorias na interface), campanhas de marketing e fortalecimento do suporte técnico e atendimento ao cliente.</p>
+
+    <h3>Visibilidade Internacional do Aplicativo</h3>
+    <p>O Pneumatic Developer tem sido divulgado por usuários de diferentes países. Exemplos:</p>
+    <ul>
+  <li>
+    <strong>Vídeos em indonésio:</strong>
+    <ul>
+      <li>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JZAzDYHUYyo" title="Vídeo demonstrativo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+      <li>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/epXTcukViVs" title="Vídeo demonstrativo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <strong>Vídeo em espanhol:</strong>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8tesOVAMfwQ" title="Vídeo em espanhol" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </li>
+  <li>
+    <strong>Vídeo em inglês:</strong>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/L0tGtAEKiH8" title="Vídeo em inglês" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </li>
+</ul>
+  </section>
+
+  <section>
+    <h2>5. Conclusão</h2>
+    <p>O Pneumatic Developer representa uma oportunidade única para transformar a forma como a automação industrial é ensinada e praticada. Ao unir tecnologias avançadas (.NET MAUI, SkiaSharp e comunicação via Modbus TCP) com uma interface intuitiva e simulações realistas, o aplicativo se consolida como uma ferramenta indispensável para instituições de ensino, indústrias e entusiastas.</p>
+    <p>Com o investimento adequado, será possível expandir suas funcionalidades, melhorar a experiência do usuário e alcançar um público ainda maior, transformando o cenário de treinamento e capacitação em automação.</p>
+  </section>
+  
+</body>
+</html>
